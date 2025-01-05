@@ -1,6 +1,6 @@
 FROM ubuntu
 ADD index.html index.html
-ADD ..
+ADD . .
 RUN apt-get update
 RUN apt-get install nginx -y
 EXPOSE 80
