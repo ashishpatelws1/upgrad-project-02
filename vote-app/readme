@@ -1,10 +1,29 @@
-$ docker build .
+Docker Commands 
 
-$ docker images
+docker build .
 
-$ docker run –itd –p ec2Port:dockerContainerPort <image Id>
+docker images
 
-$ docker run –itd –p 90:80 <image Id>
+docker ps
+
+docker stop <Image_Id>
+
+docker stop -f <Image_Id>
+
+docker run -itd  -p <EC2Port>:<ContainerPort> <Image_Id>
+
+docker run -itd  -p 90:80 35e4b9c2218a
+
+docker rmi <ImageId>
+
+docker rmi -f <ImageId>
 
 
-$ docker stop <image id>
+
+aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 796973483974.dkr.ecr.us-west-2.amazonaws.com
+
+docker build -t 796973483974.dkr.ecr.us-west-2.amazonaws.com/ap-ecr/ap-ecr-repo:vote-app-v1 .
+
+docker push 796973483974.dkr.ecr.us-west-2.amazonaws.com/ap-ecr/ap-ecr-repo:vote-app-v1
+
+docker pull 796973483974.dkr.ecr.us-west-2.amazonaws.com/ap-ecr/ap-ecr-repo:vote-app-v1
