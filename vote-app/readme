@@ -1,0 +1,10 @@
+$ docker build .
+
+$ docker images
+
+$ docker run –itd –p ec2Port:dockerContainerPort <image Id>
+
+$ docker run –itd –p 90:80 <image Id>
+
+
+$ docker stop <image id>
